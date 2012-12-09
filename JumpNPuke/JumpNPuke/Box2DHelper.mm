@@ -4,7 +4,7 @@
 //
 //  Created by Biou on 25/11/12.
 //
-//  Pipi
+// 
 
 #import "Box2DHelper.h"
 
