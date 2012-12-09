@@ -165,8 +165,8 @@ JNPControlLayer * controlLayer;
 		
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			if( CC_CONTENT_SCALE_FACTOR() == 2 ) { // ipad retina
-				playerDensity = 0.5;
-				forceFactor = 1;
+				playerDensity = 10;
+				forceFactor = 4;
 			} else { // ipad
 				playerDensity = 0.5;
 				forceFactor = 1;
