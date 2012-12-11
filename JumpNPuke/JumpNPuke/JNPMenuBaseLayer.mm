@@ -53,7 +53,7 @@ CCMenu * myMenu;
 
         [myMenu2 alignItemsHorizontally];
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
-				myMenu2.position = ccp(50, 100);
+				myMenu2.position = ccp(27, 55);
 		} else {
 				myMenu2.position = ccp(70, 113);
 		}
@@ -113,7 +113,7 @@ CCMenu * myMenu;
 	// Arrange the menu items vertically
 	[myMenu alignItemsVertically];
 	if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
-		myMenu.position = ccp(winsize.width/2, 110);
+		myMenu.position = ccp(winsize.width/2, 125);
 	} else {
 		myMenu.position = ccp(winsize.width/2, 280);
 	}
