@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320A0E0F167D165F00C2CCE9 /* ingame-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 320A0E0E167D165F00C2CCE9 /* ingame-ipadhd.plist */; };
+		320A0E11167D166A00C2CCE9 /* ingame-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 320A0E10167D166A00C2CCE9 /* ingame-ipadhd.png */; };
 		320DBCE816709E25002A8591 /* bords.png in Resources */ = {isa = PBXBuildFile; fileRef = 320DBCE416709E25002A8591 /* bords.png */; };
 		320DBCE916709E25002A8591 /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 320DBCE516709E25002A8591 /* map.tmx */; };
 		320DBCEA16709E25002A8591 /* bords-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 320DBCE616709E25002A8591 /* bords-ipadhd.png */; };
@@ -187,6 +189,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320A0E0E167D165F00C2CCE9 /* ingame-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ingame-ipadhd.plist"; sourceTree = "<group>"; };
+		320A0E10167D166A00C2CCE9 /* ingame-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ingame-ipadhd.png"; sourceTree = "<group>"; };
 		320DBCE416709E25002A8591 /* bords.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bords.png; sourceTree = "<group>"; };
 		320DBCE516709E25002A8591 /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
 		320DBCE616709E25002A8591 /* bords-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bords-ipadhd.png"; sourceTree = "<group>"; };
@@ -974,6 +978,8 @@
 		32EFF2FA162B24BF00B44F34 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				320A0E10167D166A00C2CCE9 /* ingame-ipadhd.png */,
+				320A0E0E167D165F00C2CCE9 /* ingame-ipadhd.plist */,
 				32DEEDA3167251A50085ABB4 /* creditsImg-hd.png */,
 				32DEEDA4167251A50085ABB4 /* creditsImg-ipad.png */,
 				32DEEDA5167251A50085ABB4 /* creditsImg-ipadhd.png */,
@@ -1326,6 +1332,8 @@
 				32DEEDCB167251A50085ABB4 /* paralaxe2-ipad.png in Resources */,
 				32DEEDCC167251A50085ABB4 /* paralaxe2-ipadhd.png in Resources */,
 				B505E83A16779A8C00C2DE3F /* ingame.png in Resources */,
+				320A0E0F167D165F00C2CCE9 /* ingame-ipadhd.plist in Resources */,
+				320A0E11167D166A00C2CCE9 /* ingame-ipadhd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
