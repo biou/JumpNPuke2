@@ -5,7 +5,7 @@
  </tileset>
  <layer name="Calque de Tile 1" width="396" height="10">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <objectgroup name="box" width="396" height="10">
@@ -663,9 +663,6 @@
   <object x="5812" y="306">
    <polyline points="0,0 29,0"/>
   </object>
-  <object x="5841" y="306">
-   <polyline points="0,0 1,-91"/>
-  </object>
   <object x="5842" y="215">
    <polyline points="0,0 -27,-10"/>
   </object>
@@ -689,15 +686,6 @@
   </object>
   <object x="5969" y="205">
    <polyline points="0,0 -65,5"/>
-  </object>
-  <object x="5904" y="210">
-   <polyline points="0,0 1,25"/>
-  </object>
-  <object x="5905" y="235">
-   <polyline points="0,0 -27,5"/>
-  </object>
-  <object x="5878" y="240">
-   <polyline points="0,0 -3,30"/>
   </object>
   <object x="5875" y="270">
    <polyline points="0,0 187,1"/>
@@ -1505,6 +1493,12 @@
   </object>
   <object x="10292" y="113">
    <polyline points="0,0 61,1"/>
+  </object>
+  <object x="5843" y="308">
+   <polyline points="0,0 2,-38 29,-38"/>
+  </object>
+  <object x="5844" y="217">
+   <polyline points="0,0 59,-8"/>
   </object>
  </objectgroup>
  <objectgroup name="objets" width="396" height="10">
