@@ -177,8 +177,8 @@ JNPControlLayer * controlLayer;
 			}
 		} else {
 			if( CC_CONTENT_SCALE_FACTOR() == 2 ) { // iphone retina
-				playerDensity = 10.0;
-				forceFactor = 6;
+				playerDensity = 8.0;
+				forceFactor = 7;
 			} else { // iphone
 				playerDensity = 10.0;
 				forceFactor = 6;
