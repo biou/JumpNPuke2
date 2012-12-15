@@ -159,13 +159,17 @@ JNPControlLayer * controlLayer;
 			elephantSize = 260.0;
 			playerSprite.position=ccp(400, 768/2);
 		} else {
+			if( CC_CONTENT_SCALE_FACTOR() == 2 ) {
 			elephantSize = 216.0;
+			} else {
+			elephantSize = 108.0;
+			}
 			playerSprite.position=ccp(187, 200);
 		}
 		
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			if( CC_CONTENT_SCALE_FACTOR() == 2 ) { // ipad retina
-				playerDensity = 10;
+				playerDensity = 10.0;
 				forceFactor = 4;
 			} else { // ipad
 				playerDensity = 0.5;
@@ -210,44 +214,6 @@ JNPControlLayer * controlLayer;
         [self schedule:@selector(detectBonusPickup:)];
         [self schedule:@selector(updateTime:) interval:1];
         [self schedule:@selector(detectObstacleCollision:)];
-
-        
-        
-        // détection du modèle d'ipad pou savoir si on active les fioritures particulantes ou pas, qui rendent un peu joli sur ipad 2 mais pas bien du tout du tout sur iPad 1.
-        const char * deviceStr = (const char *)glGetString(GL_RENDERER);
-        if (!strcmp(deviceStr, "PowerVR SGX 535")) {
-            // iPad 1
-            enableParticles = NO;
-        }
-        else {
-            // iPad 2 or later
-            enableParticles = YES;
-        }
-        
-        
-/*
-#if 1
-		// Use batch node. Faster
-		CCSpriteBatchNode *parent = [CCSpriteBatchNode batchNodeWithFile:@"blocks.png" capacity:100];
-		spriteTexture_ = [parent texture];
-#else
-		// doesn't use batch node. Slower
-		spriteTexture_ = [[CCTextureCache sharedTextureCache] addImage:@"blocks.png"];
-		CCNode *parent = [CCNode node];
-#endif
-		[self addChild:parent z:0 tag:kTagParentNode];
- */       
-		if (enableParticles) {
-			particleSystem = [[CCParticleFire alloc] initWithTotalParticles:50];
-			//[particleSystem setEmitterMode: kCCParticleModeRadius];
-			particleSystem.startColor = (ccColor4F){200/255.f, 200/255.f, 200/255.f, 0.6f};
-			particleSystem.life = 1;
-			particleSystem.lifeVar = 1;
-			particleSystem.angleVar = 50;
-			particleSystem.startSize = 1.5;
-			particleSystem.texture = [[CCTextureCache sharedTextureCache] addImage:@"particle.png"];
-			[self addChild:particleSystem z:10];
-		}
 		
         [self scheduleUpdate];
 	}
@@ -560,30 +526,12 @@ JNPControlLayer * controlLayer;
     std::vector<MyContact>::iterator pos;
     for(pos = _contactListener->_contacts.begin(); 
         pos != _contactListener->_contacts.end(); ++pos) {
-        MyContact contact = *pos;
-        
-        b2Body *bodyB = contact.fixtureB->GetBody();
-        
-        CCSprite *playerSpriteA = (__bridge CCSprite*)bodyB->GetUserData();
-        
-        float speedFactor = [[NSString stringWithFormat:@"%f", currentSpeed] length];        
-        
-		if (enableParticles) {
-			particleSystem.sourcePosition = ccp( playerSpriteA.position.x - 450 , playerSpriteA.position.y );
-			particleSystem.startSizeVar = 0.9 * speedFactor;
-			particleSystem.lifeVar = 3 * speedFactor;
-			particleSystem.life = 2 * speedFactor;
-		}
-        
-                
+       
         // not toooooo much boingboing
         if (fabs(prevPlayerPosition - currentPlayerPosition) >= 1
             && fabs(prevPlayerPosition_y - currentPlayerPosition_y) >= 1) {
 
             [_audioManager playJump];
-			if (enableParticles) {
-				[particleSystem resetSystem];
-			}
         }
     }
     

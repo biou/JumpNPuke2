@@ -18,11 +18,6 @@
 #import "MyContactListener.h"
 #import "CCParallaxScrollNode.h"
 
-
-
-
-
-
 #define KVMIN 155.0
 #define KV2 180.0
 #define KV3 260.0
@@ -47,8 +42,6 @@
 	CCTexture2D *spriteTexture_;	// weak ref
 	b2World* world;					// strong ref
 	GLESDebugDraw *m_debugDraw;		// strong ref
-
-    CCParticleFire *particleSystem;
     
     CCTMXTiledMap *_tileMap;
     CCTMXLayer *_background;
@@ -66,7 +59,6 @@
 	float playerDensity;
 	int forceFactor;
 	BOOL hasWon;
-	BOOL enableParticles;
 	b2CircleShape * currentCircle;
 
     JNPAudioManager *_audioManager;
