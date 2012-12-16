@@ -19,6 +19,7 @@
 		<string>Icon-Small.png</string>
 		<string>Icon-Small@2x.png</string>
 		<string>Icon-72@2x.png</string>
+		<string>Icon-Small-50@2x.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -33,6 +34,7 @@
 				<string>Icon-Small.png</string>
 				<string>Icon-Small@2x.png</string>
 				<string>Icon-72@2x.png</string>
+				<string>Icon-Small-50@2x.png</string>
 			</array>
 		</dict>
 	</dict>
