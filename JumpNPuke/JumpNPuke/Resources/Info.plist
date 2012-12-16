@@ -12,14 +12,13 @@
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>icone57.png</string>
-		<string>icone114.png</string>
-		<string>icone.png</string>
+		<string>Icon.png</string>
+		<string>Icon@2x.png</string>
+		<string>Icon-72.png</string>
 		<string>Icon-Small-50.png</string>
 		<string>Icon-Small.png</string>
 		<string>Icon-Small@2x.png</string>
-		<string>icone72.png</string>
-		<string>icone144.png</string>
+		<string>Icon-144.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -27,14 +26,13 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>icone57.png</string>
-				<string>icone114.png</string>
-				<string>icone.png</string>
+				<string>Icon.png</string>
+				<string>Icon@2x.png</string>
+				<string>Icon-72.png</string>
 				<string>Icon-Small-50.png</string>
 				<string>Icon-Small.png</string>
 				<string>Icon-Small@2x.png</string>
-				<string>icone72.png</string>
-				<string>icone144.png</string>
+				<string>Icon-144.png</string>
 			</array>
 		</dict>
 	</dict>
