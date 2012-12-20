@@ -135,7 +135,7 @@ JNPControlLayer * controlLayer;
         
 		// enable events
 		
-		self.isTouchEnabled = YES;
+		self.isTouchEnabled = NO;
 		
 		// init physics
 		[self initPhysics];
@@ -433,11 +433,13 @@ JNPControlLayer * controlLayer;
     JNPScore *s = [JNPScore sharedInstance];
     float leveldifficulty = 100.0+45.0*[s getLevel];
     
+    
     if (v<leveldifficulty) {
         float zeForce = (leveldifficulty - v + [controlLayer getAccelY]*300/forceFactor)/200;
         b2Vec2 force = b2Vec2(zeForce, 0.0f);
         playerBody->ApplyLinearImpulse(force, playerBody->GetPosition());
     }
+    
     
     if (v<KVMIN) {
         [_audioManager playMusicWithStress:1];
@@ -545,7 +547,7 @@ JNPControlLayer * controlLayer;
 
 -(void)tellPlayerToJump {
     float adjustedForce = (44.0 + (140.0 * currentScale))/forceFactor;
-    NSLog(@"CURRENTSCALE = %f  ADJUSTED FORCE = %f",currentScale, adjustedForce);
+    //NSLog(@"CURRENTSCALE = %f  ADJUSTED FORCE = %f",currentScale, adjustedForce);
     
     b2Vec2 force = b2Vec2(0.25*adjustedForce, adjustedForce); //18
     playerBody->ApplyLinearImpulse(force, playerBody->GetPosition());
@@ -726,6 +728,7 @@ JNPControlLayer * controlLayer;
 
 
 #pragma mark DRAW DEBUG DATA ICI !!!
+/*
 -(void) draw
 {
 	//
@@ -743,8 +746,7 @@ JNPControlLayer * controlLayer;
 	
 	kmGLPopMatrix();
 }
-
-
+*/
 
 
 

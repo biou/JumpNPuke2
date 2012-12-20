@@ -31,6 +31,8 @@ id pukeButtonSelected;
 		winSize = [[CCDirector sharedDirector] winSize];
 		orientation = 1;
 		
+        
+        
 		jumpButton = [CCSprite spriteWithSpriteFrameName: @"jumpButton.png"];
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
 			jumpButton.position = ccp( 60, 60 );
@@ -116,8 +118,11 @@ id pukeButtonSelected;
 		}
         [self addChild:myMenu2];
 		
+ 
 		// Initialisation de l'accelerometre
 		
+        self.isAccelerometerEnabled = YES;
+        
 		[self setRawAccelY:[NSMutableArray arrayWithCapacity:NUM_FILTER_POINTS]];
         for (int i = 0; i < NUM_FILTER_POINTS; i++)
         {
@@ -125,10 +130,12 @@ id pukeButtonSelected;
         } 
 		
         UIAccelerometer *accelerometer = [UIAccelerometer sharedAccelerometer];
-        accelerometer.updateInterval = 1.0/60.0;
-        accelerometer.delegate = self;		
+        [accelerometer setUpdateInterval:1.0/15.0];
+        // accelerometer.updateInterval = 1.0/60.0;
+        // accelerometer.delegate = self;
         
-		self.isTouchEnabled = YES;
+        
+		self.isTouchEnabled = NO;
 	}
     return self;
 }

@@ -14,7 +14,7 @@
 #import "JNPGameLayer.h"
 
 
-#define NUM_FILTER_POINTS 10  // number of recent points to use in average
+#define NUM_FILTER_POINTS 7  // number of recent points to use in average
 
 
 typedef enum tagPaddleState {
@@ -22,7 +22,7 @@ typedef enum tagPaddleState {
 	kPaddleStateUngrabbed
 } PaddleState;
 
-@interface JNPControlLayer : CCLayer <CCTargetedTouchDelegate,UIAccelerometerDelegate> {
+@interface JNPControlLayer : CCLayer <CCTargetedTouchDelegate> {
 	@private
     PaddleState state;
     JNPGameLayer *ref;
