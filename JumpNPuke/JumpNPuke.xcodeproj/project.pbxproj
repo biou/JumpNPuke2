@@ -451,6 +451,7 @@
 		32DEEDB5167251A50085ABB4 /* paralaxe2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "paralaxe2-hd.png"; path = "images/paralaxe2-hd.png"; sourceTree = "<group>"; };
 		32DEEDB6167251A50085ABB4 /* paralaxe2-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "paralaxe2-ipad.png"; path = "images/paralaxe2-ipad.png"; sourceTree = "<group>"; };
 		32DEEDB7167251A50085ABB4 /* paralaxe2-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "paralaxe2-ipadhd.png"; path = "images/paralaxe2-ipadhd.png"; sourceTree = "<group>"; };
+		32E756A31683B177007D08F8 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; name = "iTunesArtwork@2x"; path = "Resources/iTunesArtwork@2x"; sourceTree = "<group>"; };
 		32EFF2E3162B24BF00B44F34 /* Jump&Puke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jump&Puke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32EFF2E7162B24BF00B44F34 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32EFF2E9162B24BF00B44F34 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1153,6 +1154,7 @@
 				32EFF301162B24BF00B44F34 /* fps_images-hd.png */,
 				32EFF303162B24BF00B44F34 /* fps_images-ipadhd.png */,
 				32EFF311162B24BF00B44F34 /* Info.plist */,
+				32E756A31683B177007D08F8 /* iTunesArtwork@2x */,
 				32EFF312162B24BF00B44F34 /* iTunesArtwork */,
 			);
 			name = Resources;
