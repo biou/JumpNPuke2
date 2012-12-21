@@ -112,9 +112,9 @@ id pukeButtonSelected;
 		
         [myMenu2 alignItemsHorizontally];
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
-			myMenu2.position = ccp(480-50, 320-30);
+			myMenu2.position = ccp(winSize.width-50, winSize.height-30);
 		} else {
-			myMenu2.position = ccp(1024-100, 768-100);
+			myMenu2.position = ccp(winSize.width-100, winSize.height-100);
 		}
         [self addChild:myMenu2];
 		

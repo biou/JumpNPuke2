@@ -113,8 +113,8 @@ static int mode;
 				labelPos = ccp(winsize.width/2, 50);
 			}
 			NSString * str = [NSString stringWithFormat:@"Level %d", t]; 
-			CCLabelTTF *label = [CCLabelTTF labelWithString:str fontName:@"Chalkduster" fontSize:64];
-			[label setPosition: ccp(winsize.width/2, 50)];
+			CCLabelTTF *label = [CCLabelTTF labelWithString:str fontName:@"Chalkduster" fontSize:fontSize];
+			[label setPosition: labelPos];
 			[self addChild: label];
 		}
 		
