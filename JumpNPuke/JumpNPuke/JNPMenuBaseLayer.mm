@@ -32,9 +32,20 @@ CCMenu * myMenu;
     self = [super init];
     if (self) {
 		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Intro.aifc" loop:YES];
-        
-        CCSprite * logo = [CCSprite spriteWithFile: @"fond-menu.png"];
+
 		CGSize winsize = [[CCDirector sharedDirector] winSize];
+		
+		CCSprite * logo = Nil;
+		NSLog(@"Winsize: %f", winsize.width);
+		if ((568.0 - winsize.width) < 1.0) {
+			logo = [CCSprite spriteWithFile: @"fond-menu-i5.png"];
+			NSLog(@"i5");
+		} else {
+			logo = [CCSprite spriteWithFile: @"fond-menu.png"];
+			NSLog(@"hd");
+		}
+        
+
         logo.position = ccp(winsize.width/2 , winsize.height/2 );
 		[self addChild:logo z:0];	
 		

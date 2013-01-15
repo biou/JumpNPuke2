@@ -251,12 +251,12 @@ JNPControlLayer * controlLayer;
 	
 	world->SetContinuousPhysics(true);
 	
-	m_debugDraw = new GLESDebugDraw( [Box2DHelper pointsToMeterRatio] );
-	world->SetDebugDraw(m_debugDraw);
+//	m_debugDraw = new GLESDebugDraw( [Box2DHelper pointsToMeterRatio] );
+//	world->SetDebugDraw(m_debugDraw);
 	
 	uint32 flags = 0;
 	flags += b2Draw::e_shapeBit;
-	m_debugDraw->SetFlags(flags);		
+//	m_debugDraw->SetFlags(flags);
 	
 	
 	// Define the ground body.
@@ -774,8 +774,8 @@ JNPControlLayer * controlLayer;
 
 -(void) dealloc
 {
-	delete m_debugDraw;
-	m_debugDraw = NULL;
+//	delete m_debugDraw;
+//	m_debugDraw = NULL;
 	delete _contactListener;
 	_contactListener = NULL;
 	delete world;

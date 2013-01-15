@@ -12,7 +12,7 @@
 #import "cocos2d.h"
 #import "Box2D.h"
 #import "Box2DHelper.h"
-#import "GLES-Render.h"
+//#import "GLES-Render.h"
 #import "JNPAudioManager.h"
 #import "JNPScore.h"
 #import "MyContactListener.h"
@@ -41,7 +41,7 @@
 {
 	CCTexture2D *spriteTexture_;	// weak ref
 	b2World* world;					// strong ref
-	GLESDebugDraw *m_debugDraw;		// strong ref
+//	GLESDebugDraw *m_debugDraw;		// strong ref
     
     CCTMXTiledMap *_tileMap;
     CCTMXLayer *_background;

@@ -49,7 +49,14 @@
 		CCLayer *bgLayer = [CCLayer node];
 		CGSize s = [CCDirector sharedDirector].winSize;		
 		// init du background
-		CCSprite *bgpic = [CCSprite spriteWithFile:@"fondpapier.png"];
+		CGSize winsize = [[CCDirector sharedDirector] winSize];
+		CCSprite *bgpic = Nil;
+		if (568.0 - winsize.width <1 ) {
+			bgpic = [CCSprite spriteWithFile:@"fondpapier-i5.png"];
+		} else {
+			bgpic = [CCSprite spriteWithFile:@"fondpapier.png"];
+		}
+		
 		bgpic.position = ccp(bgpic.position.x + s.width/2.0, bgpic.position.y+s.height/2.0);
 		//bgpic.opacity = 160;
 		bgpic.color = ccc3(160, 160, 160);

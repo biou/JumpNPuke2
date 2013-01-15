@@ -55,9 +55,18 @@ static int mode;
 			default:
 				break;
 		}
+
+		CGSize winsize = [[CCDirector sharedDirector] winSize];		
+		CCSprite *bgpic = Nil;
+		if (mode == jnpHelp && (568.0 - winsize.width <1 )) {
+			bgpic = [CCSprite spriteWithFile:@"faq-i5.png"];
+		} else if (mode == jnpCredits && (568.0 - winsize.width <1 )) {
+			bgpic = [CCSprite spriteWithFile:@"creditsImg-i5.png"];			
+		} else {
+			bgpic = [CCSprite spriteWithFile:image];
+		}
 		
-		CCSprite *bgpic = [CCSprite spriteWithFile:image];
-		CGSize winsize = [[CCDirector sharedDirector] winSize];
+
         bgpic.position = ccp(winsize.width/2 , winsize.height/2 );
 		[self addChild:bgpic];
 		
