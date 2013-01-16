@@ -1503,6 +1503,21 @@
   <object x="5845" y="215">
    <polyline points="0,0 57,-5"/>
   </object>
+  <object x="2994" y="305">
+   <polyline points="0,0 55,1"/>
+  </object>
+  <object x="3219" y="47">
+   <polyline points="0,0 27,2"/>
+  </object>
+  <object x="1813" y="44">
+   <polyline points="0,0 -4,-31"/>
+  </object>
+  <object x="8752" y="244">
+   <polyline points="0,0 1,26"/>
+  </object>
+  <object x="10837" y="306">
+   <polyline points="0,0 27,2"/>
+  </object>
  </objectgroup>
  <objectgroup name="objets" width="396" height="10">
   <object x="108" y="137"/>

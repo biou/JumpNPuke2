@@ -37,7 +37,7 @@ CCMenu * myMenu;
 		
 		CCSprite * logo = Nil;
 		NSLog(@"Winsize: %f", winsize.width);
-		if ((568.0 - winsize.width) < 1.0) {
+		if (fabs(568.0 - winsize.width) < 1.0) {
 			logo = [CCSprite spriteWithFile: @"fond-menu-i5.png"];
 			NSLog(@"i5");
 		} else {

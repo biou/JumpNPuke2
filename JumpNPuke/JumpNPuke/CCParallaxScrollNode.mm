@@ -43,13 +43,13 @@
 -(void) updateWithVelocity:(CGPoint)vel AndDelta:(ccTime)dt {
 	CGSize screen = [CCDirector sharedDirector].winSize;
 	
-	vel = ccpMult(vel, [Box2DHelper pixelsToMeterRatio]);
+	vel = ccpMult(vel, [Box2DHelper pointsToMeterRatio]);
 	
 	for (int i=scrollOffsets->num - 1; i >= 0; i--) {
 		CCParallaxScrollOffset *scrollOffset = scrollOffsets->arr[i];
 		CCNode *child = scrollOffset.child;
 		
-		CGPoint relVel = ccpMult(scrollOffset.relVelocity, [Box2DHelper pixelsToMeterRatio]);
+		CGPoint relVel = ccpMult(scrollOffset.relVelocity, [Box2DHelper pointsToMeterRatio]);
 		CGPoint totalVel = ccpAdd(vel, relVel);
 		
 		CGPoint offset = ccpCompMult(ccpMult(totalVel, dt), scrollOffset.ratio);

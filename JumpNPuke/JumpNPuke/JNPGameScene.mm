@@ -32,11 +32,15 @@
         CCSprite *clouds2 = [CCSprite spriteWithFile:@"paralaxe2.png"];
         CCSprite *clouds1bis = [CCSprite spriteWithFile:@"paralaxe1.png"];
         CCSprite *clouds2bis = [CCSprite spriteWithFile:@"paralaxe2.png"];
-        float totalWidth = 4 * clouds1.contentSize.width;
-        [parallax addChild:clouds1 z:0 Ratio:ccp(1.3,1) Pos:ccp(0,0) ScrollOffset:ccp(totalWidth,0)];
-        [parallax addChild:clouds2 z:0 Ratio:ccp(0.6,1) Pos:ccp(0,0) ScrollOffset:ccp(totalWidth,0)];
-        [parallax addChild:clouds1bis z:0 Ratio:ccp(1.3,1) Pos:ccp(clouds1.contentSize.width,0) ScrollOffset:ccp(totalWidth,0)];
-        [parallax addChild:clouds2bis z:0 Ratio:ccp(0.6,1) Pos:ccp(clouds2.contentSize.width,0) ScrollOffset:ccp(totalWidth,0)];
+        float totalWidth = 4 * clouds1.contentSize.width; // taille en points
+		NSLog(@"width p1 %f", clouds1.contentSize.width);
+        //[parallax addChild:clouds1 z:0 Ratio:ccp(1.3,1) Pos:ccp(0,0) ScrollOffset:ccp(totalWidth,0)];
+        //[parallax addChild:clouds2 z:0 Ratio:ccp(0.6,1) Pos:ccp(0,0) ScrollOffset:ccp(totalWidth,0)];
+        
+		[parallax addInfiniteScrollXWithZ:0 Ratio:ccp(1.3,1) Pos:ccp(0,0) Objects:clouds1, clouds1bis, nil];
+		[parallax addInfiniteScrollXWithZ:0 Ratio:ccp(0.6,1) Pos:ccp(0,0) Objects:clouds2, clouds2bis, nil];
+		//[parallax addChild:clouds1bis z:0 Ratio:ccp(1.3,1) Pos:ccp(clouds1.contentSize.width,0) ScrollOffset:ccp(totalWidth,0)];
+        //[parallax addChild:clouds2bis z:0 Ratio:ccp(0.6,1) Pos:ccp(clouds2.contentSize.width,0) ScrollOffset:ccp(totalWidth,0)];
         // Add to layer, sprite, etc.
         [self addChild:parallax z:-1];	
 		
@@ -51,7 +55,7 @@
 		// init du background
 		CGSize winsize = [[CCDirector sharedDirector] winSize];
 		CCSprite *bgpic = Nil;
-		if (568.0 - winsize.width <1 ) {
+		if (fabs(568.0 - winsize.width) <1 ) {
 			bgpic = [CCSprite spriteWithFile:@"fondpapier-i5.png"];
 		} else {
 			bgpic = [CCSprite spriteWithFile:@"fondpapier.png"];

@@ -52,7 +52,7 @@
 	// logo qui va s'animer
 	CCSprite *logo = Nil;
 	CGSize winsize = [[CCDirector sharedDirector] winSize];
-	if (568.0 - winsize.width <1 ) {
+	if (fabs(568.0 - winsize.width) <1 ) {
 		logo = [CCSprite spriteWithFile:@"intro-i5.png"];
 	} else {
 		logo = [CCSprite spriteWithFile:@"intro.png"];

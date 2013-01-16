@@ -601,7 +601,7 @@
    <polyline points="0,0 -28,-2"/>
   </object>
   <object x="5043" y="217">
-   <polyline points="0,0 44,53"/>
+   <polyline points="-1,-6 44,53"/>
   </object>
   <object x="5087" y="270">
    <polyline points="0,0 80,1"/>
@@ -619,7 +619,7 @@
    <polyline points="0,0 80,6"/>
   </object>
   <object x="5298" y="277">
-   <polyline points="0,0 9,29"/>
+   <polyline points="-3,-5 9,29"/>
   </object>
   <object x="5307" y="306">
    <polyline points="0,0 53,-2"/>
@@ -1189,7 +1189,7 @@
    <polyline points="0,0 178,2"/>
   </object>
   <object x="7184" y="21">
-   <polyline points="0,0 4,25"/>
+   <polyline points="-5,-3 4,25"/>
   </object>
   <object x="7245" y="49">
    <polyline points="0,0 10,35"/>
@@ -1499,6 +1499,27 @@
   </object>
   <object x="5844" y="217">
    <polyline points="0,0 59,-8"/>
+  </object>
+  <object x="2998" y="304">
+   <polyline points="0,0 50,0"/>
+  </object>
+  <object x="3218" y="48">
+   <polyline points="0,0 30,0"/>
+  </object>
+  <object x="2736" y="180">
+   <polyline points="0,0 8,22"/>
+  </object>
+  <object x="5652" y="266">
+   <polyline points="0,0 14,18"/>
+  </object>
+  <object x="8751" y="246">
+   <polyline points="0,0 8,28"/>
+  </object>
+  <object x="10838" y="304">
+   <polyline points="0,0 23,1"/>
+  </object>
+  <object x="1809" y="44">
+   <polyline points="0,0 5,-29"/>
   </object>
  </objectgroup>
  <objectgroup name="objets" width="396" height="10">
