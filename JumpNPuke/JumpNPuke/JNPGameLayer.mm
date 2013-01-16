@@ -425,10 +425,13 @@ JNPControlLayer * controlLayer;
     float currentPlayerPosition = ((__bridge CCSprite *)playerBody->GetUserData()).position.x;
     float currentPlayerPosition_y = ((__bridge CCSprite *)playerBody->GetUserData()).position.y;
     self.position = ccp(200-currentPlayerPosition, self.position.y);
-    
     float dp = currentPlayerPosition - prevPlayerPosition;
     float v = dp/dt;
-    currentSpeed=v;
+	if (prevPlayerPosition == 0) { // on supprime le premier point.
+		currentSpeed = 0;
+	} else {
+		currentSpeed=v;
+	}
     
     JNPScore *s = [JNPScore sharedInstance];
     float leveldifficulty = 100.0+45.0*[s getLevel];
@@ -453,11 +456,12 @@ JNPControlLayer * controlLayer;
     
     [self checkCollisions:dt];
     
-    float speedFactor = [[NSString stringWithFormat:@"%f", fabs(currentSpeed)] length] * 0.1;
-    // NSLog(@"%f", speedFactor);
+    //float speedFactor = [[NSString stringWithFormat:@"%f", fabs(currentSpeed)] length] * 0.1;
+    //NSLog(@"speedFactor %f", speedFactor);
+    //NSLog(@"currentSpeed %f", currentSpeed);
     
-    [parallax updateWithVelocity:ccp(-speedFactor, 0.001 * speedFactor) AndDelta:dt];
-    
+    //[parallax updateWithVelocity:ccp(-speedFactor, 0.001 * speedFactor) AndDelta:dt];
+    [parallax updateWithVelocity:ccp(-currentSpeed*0.005, 0) AndDelta:dt];
     prevPlayerPosition = currentPlayerPosition;
     prevPlayerPosition_y = currentPlayerPosition_y;
 }
