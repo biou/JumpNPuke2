@@ -44,6 +44,7 @@ JNPControlLayer * controlLayer;
 		CGSize ps = [[CCDirector sharedDirector] winSizeInPixels];
 		
 		hasWon = NO;
+		bonusMalusIPhoneScale = 1.2;
        
 		// init de la Map avant box2d
         self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"map.tmx"];
@@ -97,10 +98,14 @@ JNPControlLayer * controlLayer;
                 CGPoint dasPunkt = ccp([[nodule valueForKey:@"x"] floatValue], [[nodule valueForKey:@"y"] floatValue]- ps.height + winSize.height);
                 CCSprite *newCollectibleBonusYoupiTralalaPouetPouet = [CCSprite spriteWithSpriteFrameName:[@"bonus_0" stringByAppendingFormat:@"%d.png",arc4random()%6+2]];
                 newCollectibleBonusYoupiTralalaPouetPouet.position=dasPunkt;
+				if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+					newCollectibleBonusYoupiTralalaPouetPouet.scale = bonusMalusIPhoneScale;
+				}
                 [self addChild:newCollectibleBonusYoupiTralalaPouetPouet];
-                
+                rayonItems = newCollectibleBonusYoupiTralalaPouetPouet.contentSize.width;
                 [lesBonusDeTaMere addObject:newCollectibleBonusYoupiTralalaPouetPouet];
             }
+			rayonItems = rayonItems /2;
             
         }
         
@@ -128,6 +133,9 @@ JNPControlLayer * controlLayer;
             CGPoint dasPunkt = ccp([[nodule valueForKey:@"x"] floatValue], [[nodule valueForKey:@"y"] floatValue] - ps.height + winSize.height);
             CCSprite *newCollidableBadBoyYoupiTralalaPouetPouet = [CCSprite spriteWithSpriteFrameName:[@"ennemis_0" stringByAppendingFormat:@"%d.png",arc4random()%7+1]];
             newCollidableBadBoyYoupiTralalaPouetPouet.position=dasPunkt;
+			if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+				newCollidableBadBoyYoupiTralalaPouetPouet.scale = bonusMalusIPhoneScale;
+			}
             [self addChild:newCollidableBadBoyYoupiTralalaPouetPouet];
             [lesObstaclesDeTonPere addObject:newCollidableBadBoyYoupiTralalaPouetPouet];
         }
@@ -164,7 +172,7 @@ JNPControlLayer * controlLayer;
 			} else {
 			elephantSize = 108.0;
 			}
-			playerSprite.position=ccp(187, 200);
+			playerSprite.position=ccp(200, 200);
 		}
 		
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -205,7 +213,7 @@ JNPControlLayer * controlLayer;
         b2FixtureDef ballShapeDef;
         ballShapeDef.shape = &circle;
         ballShapeDef.density = playerDensity/currentScale;
-		ballShapeDef.friction = RAYONITEMS;
+		ballShapeDef.friction = KFRICTION;
         ballShapeDef.restitution = KREBONDISSEMENT;
         playerBody->CreateFixture(&ballShapeDef);
         [self schedule:@selector(updatePlayerPosFromPhysics:)];
@@ -373,7 +381,7 @@ JNPControlLayer * controlLayer;
         float contentSize = ((__bridge CCSprite *)playerBody->GetUserData()).contentSize.width*((__bridge CCSprite *)playerBody->GetUserData()).scale;
         
         // Condition de ramassage du bonus. Le contenu du "if" est l'action en cas de ramassage
-        if (dist < contentSize/2 + RAYONITEMS) {
+        if (dist < contentSize/2 + rayonItems) {
             
             // Suppression du bonus de la carte et de la liste des bonus
             [self removeChild:schpritz cleanup:NO];
@@ -405,7 +413,7 @@ JNPControlLayer * controlLayer;
         float dist = sqrtf(distanceCarree);
         float contentSize = ((__bridge CCSprite *)playerBody->GetUserData()).contentSize.width*((__bridge CCSprite *)playerBody->GetUserData()).scale;
         
-        if (dist < contentSize/2 + RAYONITEMS) {
+        if (dist < contentSize/2 + rayonItems) {
             [self removeChild:schpritz cleanup:NO];
             [lesObstaclesDeTonPere removeObject:schpritz];
             [self diminuerPlayerDeltaScale:0.04];	
@@ -581,6 +589,9 @@ JNPControlLayer * controlLayer;
         CGPoint dasPunkt = ccp(ballData.position.x,ballData.position.y);
         CCSprite *vomi = [CCSprite spriteWithSpriteFrameName:[@"bonus_0" stringByAppendingFormat:@"%d.png",arc4random()%6+2]];
         vomi.position=dasPunkt;
+		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+			vomi.scale = bonusMalusIPhoneScale;
+		}
         [self addChild:vomi];
         [lesVomisDeTaGrandMere addObject:vomi];
     }
@@ -617,7 +628,7 @@ JNPControlLayer * controlLayer;
             b2FixtureDef ballShapeDef;
             ballShapeDef.shape = &circle;
             ballShapeDef.density = 0.50/currentScale; //0.5f * currentScale;
-            ballShapeDef.friction = RAYONITEMS;
+            ballShapeDef.friction = KFRICTION;
             ballShapeDef.restitution = KREBONDISSEMENT;
             playerBody->CreateFixture(&ballShapeDef);
             
@@ -651,7 +662,7 @@ JNPControlLayer * controlLayer;
 		b2FixtureDef ballShapeDef;
 		ballShapeDef.shape = &circle;
 		ballShapeDef.density = 0.50/currentScale; //0.5f * currentScale;
-        ballShapeDef.friction = RAYONITEMS;
+        ballShapeDef.friction = KFRICTION;
         ballShapeDef.restitution = KREBONDISSEMENT;
 		playerBody->CreateFixture(&ballShapeDef);
 		if (effect) {

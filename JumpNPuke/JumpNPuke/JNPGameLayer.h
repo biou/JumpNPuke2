@@ -21,9 +21,8 @@
 #define KVMIN 155.0
 #define KV2 180.0
 #define KV3 260.0
-#define RAYONITEMS 21
 #define KREBONDISSEMENT 0.55
-#define KFRICTION 0.2
+#define KFRICTION 21
 
 
 //Pixel to metres ratio. Box2D uses metres as the unit for measurement.
@@ -57,6 +56,8 @@
 	float currentScale;
 	float elephantSize;
 	float playerDensity;
+	float bonusMalusIPhoneScale;
+	float rayonItems;
 	int forceFactor;
 	BOOL hasWon;
 	b2CircleShape * currentCircle;
