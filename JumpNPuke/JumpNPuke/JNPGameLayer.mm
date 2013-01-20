@@ -451,7 +451,7 @@ JNPControlLayer * controlLayer;
         playerBody->ApplyLinearImpulse(force, playerBody->GetPosition());
     }
     
-    
+    NSLog(@"currentSpeed %f", v);
     if (v<KVMIN) {
         [_audioManager playMusicWithStress:1];
     } else if (v<KV2) {
