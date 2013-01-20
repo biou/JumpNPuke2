@@ -58,10 +58,10 @@ static int mode;
 
 		CGSize winsize = [[CCDirector sharedDirector] winSize];		
 		CCSprite *bgpic = Nil;
-		if (mode == jnpHelp && fabs(568.0 - winsize.width <1 )) {
+		if (mode == jnpHelp && fabs(568.0 - winsize.width) <1 ) {
 			bgpic = [CCSprite spriteWithFile:@"faq-i5.png"];
-		} else if (mode == jnpCredits && fabs(568.0 - winsize.width <1 )) {
-			bgpic = [CCSprite spriteWithFile:@"creditsImg-i5.png"];			
+		} else if (mode == jnpCredits && fabs(568.0 - winsize.width) <1 ) {
+			bgpic = [CCSprite spriteWithFile:@"creditsImg-i5.png"];
 		} else {
 			bgpic = [CCSprite spriteWithFile:image];
 		}
