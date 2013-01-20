@@ -79,7 +79,7 @@
 
 - (void) introSound:(ccTime) dt {
     JNPAudioManager *am = [JNPAudioManager sharedAM];
-	[am play:jnpSndLevel_Up];
+	[am play:@"Checkpoint.caf"];
 }
 
 

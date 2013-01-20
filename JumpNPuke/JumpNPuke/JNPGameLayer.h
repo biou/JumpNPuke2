@@ -18,9 +18,8 @@
 #import "MyContactListener.h"
 #import "CCParallaxScrollNode.h"
 
-#define KVMIN 155.0
-#define KV2 180.0
-#define KV3 260.0
+#define KSIZESMALL 0.3
+#define KSIZEBIG 0.6
 #define KREBONDISSEMENT 0.55
 #define KFRICTION 21
 
@@ -59,6 +58,7 @@
 	float bonusMalusIPhoneScale;
 	float rayonItems;
 	int forceFactor;
+	int currentMusicStress;
 	BOOL hasWon;
 	b2CircleShape * currentCircle;
 

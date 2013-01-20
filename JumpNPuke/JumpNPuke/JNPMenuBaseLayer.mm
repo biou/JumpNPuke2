@@ -31,18 +31,18 @@ CCMenu * myMenu;
 - (id)init {
     self = [super init];
     if (self) {
-		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Intro.aifc" loop:YES];
+		[[JNPAudioManager sharedAM] playMusic:0];
 
 		CGSize winsize = [[CCDirector sharedDirector] winSize];
 		
 		CCSprite * logo = Nil;
-		NSLog(@"Winsize: %f", winsize.width);
+		//NSLog(@"Winsize: %f", winsize.width);
 		if (fabs(568.0 - winsize.width) < 1.0) {
 			logo = [CCSprite spriteWithFile: @"fond-menu-i5.png"];
-			NSLog(@"i5");
+			//NSLog(@"i5");
 		} else {
 			logo = [CCSprite spriteWithFile: @"fond-menu.png"];
-			NSLog(@"hd");
+			//NSLog(@"hd");
 		}
         
 
@@ -160,7 +160,8 @@ CCMenu * myMenu;
 	[self unscheduleAllSelectors];
 	[self unscheduleUpdate];
 	JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
-	[audioManager play:jnpSndMenu];	
+	[audioManager play:@"Menu.caf"];
+	[audioManager stopMusic];
 }
 
 -(void)handleAuthChange:(BOOL) n {

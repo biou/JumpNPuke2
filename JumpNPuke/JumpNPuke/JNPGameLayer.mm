@@ -45,6 +45,7 @@ JNPControlLayer * controlLayer;
 		
 		hasWon = NO;
 		bonusMalusIPhoneScale = 1.2;
+		currentMusicStress = 1;
        
 		// init de la Map avant box2d
         self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"map.tmx"];
@@ -208,7 +209,7 @@ JNPControlLayer * controlLayer;
         
         b2CircleShape circle;
         circle.m_radius = elephantSize*playerSprite.scale/2/[Box2DHelper pixelsToMeterRatio];
-		NSLog(@"circle radius:%f", circle.m_radius);
+		//NSLog(@"circle radius:%f", circle.m_radius);
         currentCircle = &circle;
         b2FixtureDef ballShapeDef;
         ballShapeDef.shape = &circle;
@@ -396,7 +397,7 @@ JNPControlLayer * controlLayer;
             [controlLayer showScore:[s getScore]];
             
             // Son de ramassage du bonus
-            [_audioManager play:jnpSndBonus];
+            [_audioManager play:@"Malus.caf"];
             return;
         }
     }
@@ -417,7 +418,7 @@ JNPControlLayer * controlLayer;
             [self removeChild:schpritz cleanup:NO];
             [lesObstaclesDeTonPere removeObject:schpritz];
             [self diminuerPlayerDeltaScale:0.04];	
-            [_audioManager play:jnpSndMalus];
+            [_audioManager play:@"Bonus.caf"];
 			JNPScore *s = [JNPScore sharedInstance];
 			[s setScore:[s getScore] - 250];
 			[controlLayer showScore:[s getScore]];
@@ -451,16 +452,20 @@ JNPControlLayer * controlLayer;
         playerBody->ApplyLinearImpulse(force, playerBody->GetPosition());
     }
     
-    NSLog(@"currentSpeed %f", v);
-    if (v<KVMIN) {
-        [_audioManager playMusicWithStress:1];
-    } else if (v<KV2) {
-        [_audioManager playMusicWithStress:2];
-    } else if (v<KV3) {
-        [_audioManager playMusicWithStress:3];
-    } else {
-        [_audioManager playMusicWithStress:4];
-    }
+	int musicStress = 1;
+    //NSLog(@"currentScale %f", currentScale);
+	if (currentScale < KSIZESMALL) {
+		musicStress = 4;
+	} else if (currentScale < KSIZEBIG) {
+		musicStress = 1;
+	} else {
+		musicStress = 2;
+	}
+	
+	if (musicStress != currentMusicStress) {
+		[_audioManager playMusicWithStress:musicStress];
+		currentMusicStress = musicStress;
+	}
     
     [self checkCollisions:dt];
     

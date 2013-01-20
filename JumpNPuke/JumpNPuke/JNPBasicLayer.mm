@@ -34,23 +34,23 @@ static int mode;
     if (self) {
 		// init du background
 		NSString * image;
-		int son;
+		NSString * son;
 		switch (mode) {
 			case jnpGameover:
 				image = @"gameover.png";
-				son = jnpSndDie;
+				son = @"Game_Over.caf";
 				break;
 			case jnpCredits:
 				image = @"creditsImg.png";
-				son = jnpSndNoSound;
+				son = @"";
 				break;
 			case jnpNewLevel:
 				image = @"levelup.png";
-				son = jnpSndLevel_Up;
+				son = @"Checkpoint.caf";
 				break;
 			case jnpHelp:
 				image = @"faq.png";
-				son = jnpSndNoSound;
+				son = @"";
 				break;				
 			default:
 				break;

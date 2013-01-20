@@ -70,8 +70,10 @@
 		
 		
 		JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
-		[audioManager playMusic:1];
+		[audioManager playBGM];
 		[gameLayer setAudioManager:audioManager];
+		[self schedule:@selector(bgmUpdate:) interval:8.3];
+		
 		
 		// add layer as a child to scene
 		//[self addChild: pauseLayer z:-15 tag:3];
@@ -84,6 +86,7 @@
 
 -(void)showPauseLayer
 {
+	[self unschedule:@selector(bgmUpdate:)];
 	pauseLayer = [JNPPauseLayer node];
 	[pauseLayer setControlLayer:controlLayer];
 	[self addChild: pauseLayer z:15 tag:3];
@@ -99,6 +102,7 @@
 -(void)hidePauseLayer
 {
 	[self removeChild:pauseLayer cleanup:YES];
+	[self schedule:@selector(bgmUpdate:) interval:8.3];
 	//[self removeChild:pauseLayer cleanup:NO];
 	//[self reorderChild:pauseLayer z:-15];
 	//pauseLayer.isTouchEnabled=NO;
@@ -106,4 +110,9 @@
 	//[[[CCDirector sharedDirector] touchDispatcher] setPriority:15 forDelegate:pauseLayer];
 }
 
+- (void) bgmUpdate:(ccTime) dt {
+	JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
+	[audioManager backgroundMusicTick:dt];
+}
+	
 @end

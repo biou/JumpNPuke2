@@ -262,7 +262,7 @@ id pukeButtonSelected;
 	if (!pause) {
 		self->pause = YES;
 		JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
-		[audioManager play:jnpSndMenu];	
+		[audioManager play:@"Menu.caf"];	
 		[audioManager pauseMusic];
 		//self.isTouchEnabled = NO; // empêche que les deux boutons soient encore actifs dans le menu pause
 

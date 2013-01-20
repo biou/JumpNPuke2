@@ -78,7 +78,7 @@
 -(void)startMenuAction {
 	//[self unscheduleUpdate];
 	JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
-	[audioManager play:jnpSndMenu];	
+	[audioManager play:@"Menu.caf"];	
 }
 
 -(void)menu1 {
