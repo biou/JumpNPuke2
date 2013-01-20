@@ -30,7 +30,7 @@ static GCHelper *sharedHelper = nil;
 
 - (id)init {
     if ((self = [super init])) {
-        gameCenterAvailable = [self isGameCenterAvailable];
+        gameCenterAvailable = EnableGC && [self isGameCenterAvailable];
         if (gameCenterAvailable) {
             NSNotificationCenter *nc = 
             [NSNotificationCenter defaultCenter];
@@ -65,6 +65,7 @@ static GCHelper *sharedHelper = nil;
 
 - (void)basicAuthenticationChanged {    
 	
+    if (!gameCenterAvailable) return;
     if ([GKLocalPlayer localPlayer].isAuthenticated && !userAuthenticated) {
 		NSLog(@"Authentication changed: player authenticated.");
 		userAuthenticated = TRUE;
@@ -93,7 +94,7 @@ static GCHelper *sharedHelper = nil;
 
 - (void) loadCategoryTitles
 {
-	
+    if (!gameCenterAvailable || ![self isUserAuthenticated]) return;		
     [GKLeaderboard loadCategoriesWithCompletionHandler:^(NSArray *categories, NSArray *titles, NSError *error) {
         if (error != nil)
         {
