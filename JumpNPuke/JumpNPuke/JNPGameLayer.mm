@@ -175,7 +175,7 @@ JNPControlLayer * controlLayer;
 			}
 			playerSprite.position=ccp(200, 200);
 		}
-		
+		forceAccel = 300;
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			if( CC_CONTENT_SCALE_FACTOR() == 2 ) { // ipad retina
 				playerDensity = 10.0;
@@ -188,6 +188,7 @@ JNPControlLayer * controlLayer;
 			if( CC_CONTENT_SCALE_FACTOR() == 2 ) { // iphone retina
 				playerDensity = 8.0;
 				forceFactor = 7;
+				forceAccel = 600;
 			} else { // iphone
 				playerDensity = 10.0;
 				forceFactor = 6;
@@ -446,8 +447,8 @@ JNPControlLayer * controlLayer;
     float leveldifficulty = 100.0+45.0*[s getLevel];
     
     
-    if (v<leveldifficulty) {
-        float zeForce = (leveldifficulty - v + [controlLayer getAccelY]*300/forceFactor)/200;
+    if (v<leveldifficulty) {			
+        float zeForce = (leveldifficulty - v + [controlLayer getAccelY]*forceAccel/forceFactor)/200;
         b2Vec2 force = b2Vec2(zeForce, 0.0f);
         playerBody->ApplyLinearImpulse(force, playerBody->GetPosition());
     }

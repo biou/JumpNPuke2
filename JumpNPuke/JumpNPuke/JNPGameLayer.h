@@ -58,6 +58,7 @@
 	float bonusMalusIPhoneScale;
 	float rayonItems;
 	int forceFactor;
+	int forceAccel;
 	int currentMusicStress;
 	BOOL hasWon;
 	b2CircleShape * currentCircle;
