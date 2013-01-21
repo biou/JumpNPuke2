@@ -165,16 +165,21 @@ JNPControlLayer * controlLayer;
 
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		{
-			elephantSize = 260.0;
+			if( CC_CONTENT_SCALE_FACTOR() == 2 ) {
+				elephantSize = 520.0;
+			} else {
+				elephantSize = 260.0;
+			}
 			playerSprite.position=ccp(400, 768/2);
 		} else {
 			if( CC_CONTENT_SCALE_FACTOR() == 2 ) {
-			elephantSize = 216.0;
+				elephantSize = 216.0;
 			} else {
-			elephantSize = 108.0;
+				elephantSize = 108.0;
 			}
 			playerSprite.position=ccp(200, 200);
 		}
+		NSLog(@"elephantsize: %f", elephantSize);
 		forceAccel = 300;
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			if( CC_CONTENT_SCALE_FACTOR() == 2 ) { // ipad retina

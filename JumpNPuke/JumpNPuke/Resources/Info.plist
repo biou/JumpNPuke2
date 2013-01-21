@@ -39,13 +39,15 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>org.sous-anneau.test</string>
+	<string>org.sous-anneau.jumpnpuke</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.9</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
