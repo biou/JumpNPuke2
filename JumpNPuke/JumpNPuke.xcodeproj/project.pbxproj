@@ -48,12 +48,10 @@
 		32777A0A16404F4F0000E99E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32777A0916404F4F0000E99E /* Default-568h@2x.png */; };
 		32777F14164277E90000E99E /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 32777E52164277E80000E99E /* base64.c */; };
 		32777F19164277E90000E99E /* ccUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 32777E5C164277E80000E99E /* ccUtils.c */; };
-		32777F33164277E90000E99E /* LICENSE_Box2D.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32777E9A164277E80000E99E /* LICENSE_Box2D.txt */; };
-		32777F34164277E90000E99E /* LICENSE_cocos2d.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32777E9B164277E80000E99E /* LICENSE_cocos2d.txt */; };
-		32777F35164277E90000E99E /* LICENSE_CocosDenshion.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32777E9C164277E80000E99E /* LICENSE_CocosDenshion.txt */; };
-		32777F36164277E90000E99E /* LICENSE_Kazmath.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32777E9D164277E80000E99E /* LICENSE_Kazmath.txt */; };
 		32777F9C164278D00000E99E /* Box2DConfig.cmake in Resources */ = {isa = PBXBuildFile; fileRef = 32777F39164278D00000E99E /* Box2DConfig.cmake */; };
 		32777F9D164278D00000E99E /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32777F3A164278D00000E99E /* CMakeLists.txt */; };
+		32B5DE9F16AD360F00FD9E72 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B5DE9E16AD360F00FD9E72 /* libz.dylib */; };
+		32B5DEA216AD38DE00FD9E72 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B5DEA116AD38DE00FD9E72 /* libTestFlight.a */; };
 		32BD188816A5E52D007DEA9D /* intro-i5.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BD188716A5E52D007DEA9D /* intro-i5.png */; };
 		32BD188A16A5E77B007DEA9D /* fondpapier-i5.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BD188916A5E77B007DEA9D /* fondpapier-i5.png */; };
 		32BD188C16A5E799007DEA9D /* creditsImg-i5.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BD188B16A5E799007DEA9D /* creditsImg-i5.png */; };
@@ -382,10 +380,6 @@
 		32777E86164277E80000E99E /* vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec2.h; sourceTree = "<group>"; };
 		32777E87164277E80000E99E /* vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec3.h; sourceTree = "<group>"; };
 		32777E88164277E80000E99E /* vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec4.h; sourceTree = "<group>"; };
-		32777E9A164277E80000E99E /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Box2D.txt; sourceTree = "<group>"; };
-		32777E9B164277E80000E99E /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
-		32777E9C164277E80000E99E /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
-		32777E9D164277E80000E99E /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
 		32777F38164278D00000E99E /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		32777F39164278D00000E99E /* Box2DConfig.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Box2DConfig.cmake; sourceTree = "<group>"; };
 		32777F3A164278D00000E99E /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -434,6 +428,9 @@
 		32777F96164278D00000E99E /* b2WeldJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2WeldJoint.h; sourceTree = "<group>"; };
 		32777F98164278D00000E99E /* b2WheelJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2WheelJoint.h; sourceTree = "<group>"; };
 		32777F9B164278D00000E99E /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
+		32B5DE9E16AD360F00FD9E72 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		32B5DEA016AD38DE00FD9E72 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		32B5DEA116AD38DE00FD9E72 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		32BD188716A5E52D007DEA9D /* intro-i5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "intro-i5.png"; path = "images/intro-i5.png"; sourceTree = "<group>"; };
 		32BD188916A5E77B007DEA9D /* fondpapier-i5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fondpapier-i5.png"; path = "images/fondpapier-i5.png"; sourceTree = "<group>"; };
 		32BD188B16A5E799007DEA9D /* creditsImg-i5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "creditsImg-i5.png"; path = "images/creditsImg-i5.png"; sourceTree = "<group>"; };
@@ -599,6 +596,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B5DE9F16AD360F00FD9E72 /* libz.dylib in Frameworks */,
 				32F5813E1674ED0000705C66 /* libcocos2d2-library.a in Frameworks */,
 				32EFF2E8162B24BF00B44F34 /* QuartzCore.framework in Frameworks */,
 				32EFF2EA162B24BF00B44F34 /* OpenGLES.framework in Frameworks */,
@@ -609,6 +607,7 @@
 				32EFF2F4162B24BF00B44F34 /* Foundation.framework in Frameworks */,
 				32EFF2F6162B24BF00B44F34 /* CoreGraphics.framework in Frameworks */,
 				32EFF2F8162B24BF00B44F34 /* GameKit.framework in Frameworks */,
+				32B5DEA216AD38DE00FD9E72 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,14 +617,12 @@
 		32777D44164277E70000E99E /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				32B5DEA016AD38DE00FD9E72 /* TestFlight.h */,
+				32B5DEA116AD38DE00FD9E72 /* libTestFlight.a */,
 				32777F37164278D00000E99E /* Box2D */,
 				32777DAA164277E80000E99E /* cocos2d */,
 				32777E6D164277E80000E99E /* CocosDenshion */,
 				32777E77164277E80000E99E /* kazmath */,
-				32777E9A164277E80000E99E /* LICENSE_Box2D.txt */,
-				32777E9B164277E80000E99E /* LICENSE_cocos2d.txt */,
-				32777E9C164277E80000E99E /* LICENSE_CocosDenshion.txt */,
-				32777E9D164277E80000E99E /* LICENSE_Kazmath.txt */,
 			);
 			name = libs;
 			path = JumpNPuke/libs;
@@ -950,6 +947,7 @@
 		32EFF2D8162B24BF00B44F34 = {
 			isa = PBXGroup;
 			children = (
+				32B5DE9E16AD360F00FD9E72 /* libz.dylib */,
 				32F581311674EC4200705C66 /* cocos2d_box2d_arc.xcodeproj */,
 				32777D44164277E70000E99E /* libs */,
 				32EFF2F9162B24BF00B44F34 /* JumpNPuke */,
@@ -1330,10 +1328,6 @@
 				32EFF5E7162B3FC500B44F34 /* bords.plist in Resources */,
 				32EFF5EB162B3FE700B44F34 /* tiles.plist in Resources */,
 				32777A0A16404F4F0000E99E /* Default-568h@2x.png in Resources */,
-				32777F33164277E90000E99E /* LICENSE_Box2D.txt in Resources */,
-				32777F34164277E90000E99E /* LICENSE_cocos2d.txt in Resources */,
-				32777F35164277E90000E99E /* LICENSE_CocosDenshion.txt in Resources */,
-				32777F36164277E90000E99E /* LICENSE_Kazmath.txt in Resources */,
 				32777F9C164278D00000E99E /* Box2DConfig.cmake in Resources */,
 				32777F9D164278D00000E99E /* CMakeLists.txt in Resources */,
 				3210D8A81662772E001F520A /* Default.png in Resources */,
@@ -1472,6 +1466,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1484,6 +1479,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "./**";
 			};
@@ -1494,6 +1490,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -1504,6 +1501,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "./**";
 			};
@@ -1522,6 +1520,10 @@
 				GCC_PREFIX_HEADER = JumpNPuke/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"JumpNPuke/libs/kazmath/include\"";
 				INFOPLIST_FILE = JumpNPuke/Resources/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/JumpNPuke/libs\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1547,6 +1549,10 @@
 				GCC_PREFIX_HEADER = JumpNPuke/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"JumpNPuke/libs/kazmath/include\"";
 				INFOPLIST_FILE = JumpNPuke/Resources/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/JumpNPuke/libs\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",

@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "JNPIntroBaseLayer.h"
 #import "GCHelper.h"
+#import "TestFlight.h"
 
 // Added only for iOS 6 support
 @interface MyNavigationController : UINavigationController <CCDirectorDelegate>
