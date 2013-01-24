@@ -59,7 +59,7 @@
 	float rayonItems;
 	int forceFactor;
 	int forceAccel;
-	int currentMusicStress;
+	NSString * currentBGM;
 	BOOL hasWon;
 	b2CircleShape * currentCircle;
 
@@ -90,6 +90,8 @@
 @property (nonatomic, strong) CCTMXTiledMap *tileMap;
 @property (nonatomic, strong) CCTMXLayer *background;
 @property (nonatomic) b2Body *playerBody;
+@property (nonatomic, strong) NSMutableArray *jumpSounds;
+@property (nonatomic, strong) NSMutableArray *pukeSounds;
 
 
 

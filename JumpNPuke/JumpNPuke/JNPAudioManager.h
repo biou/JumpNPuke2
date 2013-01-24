@@ -15,22 +15,34 @@
 	
 }
 
--(void) playMusicWithStress:(int)stress;
--(void) playMusic:(int)stress;
--(void) stopMusic;
--(void) pauseMusic;
--(void) resumeMusic;
--(void) play:(NSString *)soundType;
+// preload all sfx and bgm files
 -(void) preload;
--(void) playJump;
--(void) playPuke;
--(void) backgroundMusicTick:(float)dt;
--(void) playBGM;
-+(JNPAudioManager *) sharedAM;
 
-@property (nonatomic) int nextMusicStress;
-@property (nonatomic) ALuint currentBGM;
-@property (strong) NSMutableArray * soundFiles;
+// background music management
+
+// must be scheduled to the length of a loop
+-(void) bgmTick:(float)dt;
+
+// the file will be looped until nextBGMWithName is called with another file name
+-(void) playBGMWithName:(NSString *)name;
+-(void) nextBGMWithName:(NSString *)name;
+
+-(void) stopBGM;
+-(void) pauseBGM;
+-(void) resumeBGM;
+
+
+// play an sfx file
+-(void) playSFX:(NSString *)soundType;
+// play a random sfx file in a list
+-(void) playRandomSfx:(NSArray *) names;
+
+
++(JNPAudioManager *) sharedAM;
+@property (strong) NSMutableArray * sfxFiles;
 @property (strong) NSMutableArray * bgmFiles;
+@property (nonatomic) NSString * nextBGM;
+@property (nonatomic) ALuint currentBGM;
+
 
 @end

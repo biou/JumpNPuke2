@@ -133,8 +133,8 @@ static int mode;
 		
 		
         JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
-        [audioManager stopMusic];
-		[audioManager play:son];
+        [audioManager stopBGM];
+		[audioManager playSFX:son];
 		self.isTouchEnabled = YES;
 
     }

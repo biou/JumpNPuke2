@@ -70,9 +70,11 @@
 		
 		
 		JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
-		[audioManager playBGM];
-		[gameLayer setAudioManager:audioManager];
+		[audioManager nextBGMWithName:@"Theme1.aifc"];
+		[audioManager playBGMWithName:@"Theme1.aifc"];
 		[self schedule:@selector(bgmUpdate:) interval:8.3];
+		[gameLayer setAudioManager:audioManager];
+
 		
 		
 		// add layer as a child to scene
@@ -112,7 +114,7 @@
 
 - (void) bgmUpdate:(ccTime) dt {
 	JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
-	[audioManager backgroundMusicTick:dt];
+	[audioManager bgmTick:dt];
 }
 	
 @end

@@ -30,70 +30,68 @@ static JNPAudioManager *sharedAM = nil;
 
 -(id) init
 {
-	if( (self=[super init])) {
-        self.nextMusicStress = 1;
-
+	if( (self=[super init])) {	
+		// list all sound effects
 		NSArray * caf = [[NSBundle mainBundle] pathsForResourcesOfType:@".caf" inDirectory:@"."];
-		self.soundFiles = [NSMutableArray arrayWithCapacity:[caf count]];
+		self.sfxFiles = [NSMutableArray arrayWithCapacity:[caf count]];
 		for (NSString * s in caf) {
-			[self.soundFiles addObject:[s lastPathComponent]];
+			[self.sfxFiles addObject:[s lastPathComponent]];
 		}
+		
+		// list all background music files
 		NSArray * aifc = [[NSBundle mainBundle] pathsForResourcesOfType:@".aifc" inDirectory:@"."];
 		self.bgmFiles = [NSMutableArray arrayWithCapacity:[aifc count]];
 		for (NSString * s in aifc) {
 			[self.bgmFiles addObject:[s lastPathComponent]];
 		}
-		[[CDAudioManager sharedManager] setBackgroundMusicCompletionListener:self selector:@selector(backgroundMusicFinished)]; 
     }
    	return self;
 }
 
 // playMusic
--(void) playMusic:(int)stress {
-	if (stress < [self.bgmFiles count]) {
-		self.currentBGM = [[SimpleAudioEngine sharedEngine] playEffect:[self.bgmFiles objectAtIndex:stress]];
+-(void) playBGMWithName:(NSString *) name {
+	if ([self.bgmFiles containsObject:name]) {
+		self.currentBGM = [[SimpleAudioEngine sharedEngine] playEffect:name];
+	} else {
+		NSLog(@"--BGM not found:%@", name);
 	}
 }
 
-// playNextMusic
--(void) playMusicWithStress:(int)stress {
-    self.nextMusicStress = stress;
-	//NSLog(@"stress: %d", stress);
+// set next loop to play
+-(void) nextBGMWithName:(NSString *) name {
+    self.nextBGM = name;
 }
 
--(void) stopMusic {
-    //[[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+-(void) stopBGM {
+	[[SimpleAudioEngine sharedEngine] stopEffect:self.currentBGM];		
+}
+
+-(void) pauseBGM {
 	[[SimpleAudioEngine sharedEngine] stopEffect:self.currentBGM];
 }
 
--(void) pauseMusic {
-	//[[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
-	[[SimpleAudioEngine sharedEngine] stopEffect:self.currentBGM];
+-(void) resumeBGM {
+	[self playBGMWithName:self.nextBGM];	
 }
 
--(void) resumeMusic {
-	//[[SimpleAudioEngine sharedEngine] resumeBackgroundMusic];
-	[self playMusic:self.nextMusicStress];
-}
 
--(void) playJump {
-	int r = (arc4random() % 2) +1;
-	[self play:[NSString stringWithFormat:@"Jump%d.caf",r]];
-}
-
--(void) playPuke {
-	
-	int r = (arc4random() % 5)+1;
-	[self play:[NSString stringWithFormat:@"Puke%d.caf",r]];
+-(void) playRandomSfx:(NSArray *) names {
+	int count = [names count];
+	if (count != 0) {
+		int r = (arc4random() % count);
+		[self playSFX:[names objectAtIndex:r]];
+	} else {
+		NSLog(@"playRandomSfx: list is empty");
+	}
 }
 
 // play
--(void) play:(NSString *)soundType {
+-(void) playSFX:(NSString *)soundType {
 	if (![soundType isEqual:@""]) {
-		if ([self.soundFiles containsObject:soundType]) {
+		if ([self.sfxFiles containsObject:soundType]) {
 			[[SimpleAudioEngine sharedEngine] playEffect:soundType];
 		} else {
-			NSLog(@"--Sound not found:%@", soundType);
+			NSLog(@"--Sfx not found:%@", soundType);
 		}
 	}
 
@@ -101,7 +99,7 @@ static JNPAudioManager *sharedAM = nil;
 
 // preload files
 -(void) preload {
-	for (NSString* s in self.soundFiles) {
+	for (NSString* s in self.sfxFiles) {
 		[[SimpleAudioEngine sharedEngine] preloadEffect:s];
 	}
 	for (NSString* s in self.bgmFiles) {
@@ -109,16 +107,10 @@ static JNPAudioManager *sharedAM = nil;
 	}
 }
 
--(void)backgroundMusicTick:(float)dt {
-	//NSLog(@"background music tick");
-	[self playMusic:self.nextMusicStress];
+-(void)bgmTick:(float)dt {
+	
+	[self playBGMWithName:self.nextBGM];
 }
-
--(void)playBGM {
-	[self backgroundMusicTick:0.0];
-
-}
-
 
 
 @end

@@ -31,8 +31,9 @@ CCMenu * myMenu;
 - (id)init {
     self = [super init];
     if (self) {
-		[[JNPAudioManager sharedAM] playMusic:0];
-
+		[[JNPAudioManager sharedAM] nextBGMWithName:@"Intro.aifc"];
+		[[JNPAudioManager sharedAM] playBGMWithName:@"Intro.aifc"];		
+		[self schedule:@selector(bgmUpdate:) interval:19.3];
 		CGSize winsize = [[CCDirector sharedDirector] winSize];
 		
 		CCSprite * logo = Nil;
@@ -160,12 +161,17 @@ CCMenu * myMenu;
 	[self unscheduleAllSelectors];
 	[self unscheduleUpdate];
 	JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
-	[audioManager play:@"Menu.caf"];
-	[audioManager stopMusic];
+	[audioManager playSFX:@"Menu.caf"];
+	[audioManager stopBGM];
 }
 
 -(void)handleAuthChange:(BOOL) n {
 	[self setupMenu];
+}
+
+- (void) bgmUpdate:(ccTime) dt {
+	JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
+	[audioManager bgmTick:dt];
 }
 
 @end

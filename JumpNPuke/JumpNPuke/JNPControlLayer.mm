@@ -262,8 +262,8 @@ id pukeButtonSelected;
 	if (!pause) {
 		self->pause = YES;
 		JNPAudioManager *audioManager = [JNPAudioManager sharedAM];
-		[audioManager play:@"Menu.caf"];	
-		[audioManager pauseMusic];
+		[audioManager playSFX:@"Menu.caf"];
+		[audioManager pauseBGM];
 		//self.isTouchEnabled = NO; // empêche que les deux boutons soient encore actifs dans le menu pause
 
 		[[CCDirector sharedDirector] pause];
@@ -276,7 +276,7 @@ id pukeButtonSelected;
 	pause = NO;
 	//self.isTouchEnabled = YES;
 	//[self enablePauseMenu];
-	[[JNPAudioManager sharedAM] resumeMusic];
+	[[JNPAudioManager sharedAM] resumeBGM];
 
 	[[CCDirector sharedDirector] resume];
 	[gameScene hidePauseLayer];

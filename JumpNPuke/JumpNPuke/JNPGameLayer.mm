@@ -45,7 +45,7 @@ JNPControlLayer * controlLayer;
 		
 		hasWon = NO;
 		bonusMalusIPhoneScale = 1.2;
-		currentMusicStress = 1;
+		currentBGM = @"Theme1.aifc";
        
 		// init de la Map avant box2d
         self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"map.tmx"];
@@ -141,6 +141,19 @@ JNPControlLayer * controlLayer;
             [lesObstaclesDeTonPere addObject:newCollidableBadBoyYoupiTralalaPouetPouet];
         }
         
+		
+		// init sfx
+		self.jumpSounds = [NSMutableArray arrayWithCapacity:2];
+		[self.jumpSounds addObject:@"Jump1.caf"];
+		[self.jumpSounds addObject:@"Jump2.caf"];
+
+		self.pukeSounds = [NSMutableArray arrayWithCapacity:5];
+		[self.pukeSounds addObject:@"Puke1.caf"];
+		[self.pukeSounds addObject:@"Puke2.caf"];
+		[self.pukeSounds addObject:@"Puke3.caf"];
+		[self.pukeSounds addObject:@"Puke4.caf"];
+		[self.pukeSounds addObject:@"Puke5.caf"];
+		
         
 		// enable events
 		
@@ -179,7 +192,7 @@ JNPControlLayer * controlLayer;
 			}
 			playerSprite.position=ccp(200, 200);
 		}
-		NSLog(@"elephantsize: %f", elephantSize);
+		//NSLog(@"elephantsize: %f", elephantSize);
 		forceAccel = 300;
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 			if( CC_CONTENT_SCALE_FACTOR() == 2 ) { // ipad retina
@@ -403,7 +416,7 @@ JNPControlLayer * controlLayer;
             [controlLayer showScore:[s getScore]];
             
             // Son de ramassage du bonus
-            [_audioManager play:@"Malus.caf"];
+            [_audioManager playSFX:@"Malus.caf"];
             return;
         }
     }
@@ -424,7 +437,7 @@ JNPControlLayer * controlLayer;
             [self removeChild:schpritz cleanup:NO];
             [lesObstaclesDeTonPere removeObject:schpritz];
             [self diminuerPlayerDeltaScale:0.04];	
-            [_audioManager play:@"Bonus.caf"];
+            [_audioManager playSFX:@"Bonus.caf"];
 			JNPScore *s = [JNPScore sharedInstance];
 			[s setScore:[s getScore] - 250];
 			[controlLayer showScore:[s getScore]];
@@ -458,19 +471,19 @@ JNPControlLayer * controlLayer;
         playerBody->ApplyLinearImpulse(force, playerBody->GetPosition());
     }
     
-	int musicStress = 1;
+	NSString * nextBGM = @"Theme1.aifc";
     //NSLog(@"currentScale %f", currentScale);
 	if (currentScale < KSIZESMALL) {
-		musicStress = 4;
+		nextBGM = @"Theme4.aifc";
 	} else if (currentScale < KSIZEBIG) {
-		musicStress = 1;
+		nextBGM = @"Theme1.aifc";
 	} else {
-		musicStress = 2;
+		nextBGM = @"Theme2.aifc";
 	}
 	
-	if (musicStress != currentMusicStress) {
-		[_audioManager playMusicWithStress:musicStress];
-		currentMusicStress = musicStress;
+	if (![nextBGM isEqualToString:currentBGM]) {
+		[_audioManager nextBGMWithName:nextBGM];
+		currentBGM = nextBGM;
 	}
     
     [self checkCollisions:dt];
@@ -554,9 +567,8 @@ JNPControlLayer * controlLayer;
        
         // not toooooo much boingboing
         if (fabs(prevPlayerPosition - currentPlayerPosition) >= 1
-            && fabs(prevPlayerPosition_y - currentPlayerPosition_y) >= 1) {
-
-            [_audioManager playJump];
+            && fabs(prevPlayerPosition_y - currentPlayerPosition_y) >= 1) {;
+			[_audioManager playRandomSfx: self.jumpSounds];
         }
     }
     
@@ -608,7 +620,7 @@ JNPControlLayer * controlLayer;
     }
     
 	// son
-	[_audioManager playPuke];	
+	[_audioManager playRandomSfx: self.pukeSounds];
 	
 	[self diminuerPlayerDeltaScale:0.055];
     
