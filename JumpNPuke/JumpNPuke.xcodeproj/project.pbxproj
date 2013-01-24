@@ -119,8 +119,6 @@
 		32EFF2F4162B24BF00B44F34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EFF2F3162B24BF00B44F34 /* Foundation.framework */; };
 		32EFF2F6162B24BF00B44F34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EFF2F5162B24BF00B44F34 /* CoreGraphics.framework */; };
 		32EFF2F8162B24BF00B44F34 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EFF2F7162B24BF00B44F34 /* GameKit.framework */; };
-		32EFF300162B24BF00B44F34 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 32EFF2FF162B24BF00B44F34 /* fps_images.png */; };
-		32EFF302162B24BF00B44F34 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 32EFF301162B24BF00B44F34 /* fps_images-hd.png */; };
 		32EFF304162B24BF00B44F34 /* fps_images-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 32EFF303162B24BF00B44F34 /* fps_images-ipadhd.png */; };
 		32EFF313162B24BF00B44F34 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 32EFF312162B24BF00B44F34 /* iTunesArtwork */; };
 		32EFF503162B24C300B44F34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EFF502162B24C300B44F34 /* main.m */; };
@@ -1273,8 +1271,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32EFF300162B24BF00B44F34 /* fps_images.png in Resources */,
-				32EFF302162B24BF00B44F34 /* fps_images-hd.png in Resources */,
 				32EFF304162B24BF00B44F34 /* fps_images-ipadhd.png in Resources */,
 				32EFF313162B24BF00B44F34 /* iTunesArtwork in Resources */,
 				32EFF559162B251C00B44F34 /* credits-over.png in Resources */,
