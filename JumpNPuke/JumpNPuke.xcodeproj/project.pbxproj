@@ -615,7 +615,6 @@
 		32777D44164277E70000E99E /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				32B5DE9E16AD360F00FD9E72 /* libz.dylib */,
 				32B5DEA016AD38DE00FD9E72 /* TestFlight.h */,
 				32B5DEA116AD38DE00FD9E72 /* libTestFlight.a */,
 				32777F37164278D00000E99E /* Box2D */,
@@ -965,6 +964,7 @@
 		32EFF2E6162B24BF00B44F34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32B5DE9E16AD360F00FD9E72 /* libz.dylib */,
 				32EFF2E7162B24BF00B44F34 /* QuartzCore.framework */,
 				32EFF2E9162B24BF00B44F34 /* OpenGLES.framework */,
 				32EFF2EB162B24BF00B44F34 /* OpenAL.framework */,
