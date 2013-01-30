@@ -14,7 +14,7 @@ static JNPScore * instance = nil;
 
 +(id)sharedInstance {
 	DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
-		return [[self alloc] init];
+		return instance = [[self alloc] init];
 	});
 }
 
