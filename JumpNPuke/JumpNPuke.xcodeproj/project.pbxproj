@@ -43,13 +43,8 @@
 		3210D8AE1662777C001F520A /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3210D8AD16627779001F520A /* Default-Portrait~ipad.png */; };
 		3210D8B0166277E1001F520A /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3210D8AF166277DE001F520A /* Default-Portrait@2x~ipad.png */; };
 		3210D8B816628CA0001F520A /* Box2DHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3210D8B716628A23001F520A /* Box2DHelper.mm */; };
-		321A896B16B90318004C269E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 321A894E16B90318004C269E /* libTestFlight.a */; };
 		321A8BD516B90507004C269E /* Box2DConfig.cmake in Resources */ = {isa = PBXBuildFile; fileRef = 321A8B1116B90506004C269E /* Box2DConfig.cmake */; };
 		321A8BD616B90507004C269E /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 321A8BCF16B90507004C269E /* ChangeLog */; };
-		321A8BD716B90507004C269E /* LICENSE_Box2D.txt in Resources */ = {isa = PBXBuildFile; fileRef = 321A8BD116B90507004C269E /* LICENSE_Box2D.txt */; };
-		321A8BD816B90507004C269E /* LICENSE_cocos2d.txt in Resources */ = {isa = PBXBuildFile; fileRef = 321A8BD216B90507004C269E /* LICENSE_cocos2d.txt */; };
-		321A8BD916B90507004C269E /* LICENSE_CocosDenshion.txt in Resources */ = {isa = PBXBuildFile; fileRef = 321A8BD316B90507004C269E /* LICENSE_CocosDenshion.txt */; };
-		321A8BDA16B90507004C269E /* LICENSE_Kazmath.txt in Resources */ = {isa = PBXBuildFile; fileRef = 321A8BD416B90507004C269E /* LICENSE_Kazmath.txt */; };
 		32425980168E38AC0050EDD1 /* fond-menu-i5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3242597F168E38AC0050EDD1 /* fond-menu-i5.png */; };
 		32425982168E3BCA0050EDD1 /* faq-i5.png in Resources */ = {isa = PBXBuildFile; fileRef = 32425981168E3BCA0050EDD1 /* faq-i5.png */; };
 		32777A0A16404F4F0000E99E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32777A0916404F4F0000E99E /* Default-568h@2x.png */; };
@@ -609,7 +604,6 @@
 				32EFF2F4162B24BF00B44F34 /* Foundation.framework in Frameworks */,
 				32EFF2F6162B24BF00B44F34 /* CoreGraphics.framework in Frameworks */,
 				32EFF2F8162B24BF00B44F34 /* GameKit.framework in Frameworks */,
-				321A896B16B90318004C269E /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1461,10 +1455,6 @@
 				32BD188C16A5E799007DEA9D /* creditsImg-i5.png in Resources */,
 				321A8BD516B90507004C269E /* Box2DConfig.cmake in Resources */,
 				321A8BD616B90507004C269E /* ChangeLog in Resources */,
-				321A8BD716B90507004C269E /* LICENSE_Box2D.txt in Resources */,
-				321A8BD816B90507004C269E /* LICENSE_cocos2d.txt in Resources */,
-				321A8BD916B90507004C269E /* LICENSE_CocosDenshion.txt in Resources */,
-				321A8BDA16B90507004C269E /* LICENSE_Kazmath.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1607,8 +1597,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "74CE0FBC-5B73-4B8A-8DD3-C991A1C005EC";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "74CE0FBC-5B73-4B8A-8DD3-C991A1C005EC";
+				PROVISIONING_PROFILE = "683C8333-622A-429F-936D-665021B38339";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "683C8333-622A-429F-936D-665021B38339";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "./**";
 				VALIDATE_PRODUCT = YES;

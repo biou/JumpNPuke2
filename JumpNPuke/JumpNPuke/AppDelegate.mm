@@ -118,7 +118,7 @@
 
 	[[GCHelper sharedInstance] authenticateLocalUser];
 	
-	[TestFlight takeOff:@"5dda9adf8405c539ff6eaf9c0ae9a786_MTY5MjE1MjAxMy0wMS0yMCAxNTowNDoxNy42OTc2MzA"];
+	//[TestFlight takeOff:@"5dda9adf8405c539ff6eaf9c0ae9a786_MTY5MjE1MjAxMy0wMS0yMCAxNTowNDoxNy42OTc2MzA"];
 	
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
 	//[director_ pushScene: [IntroLayer scene]];

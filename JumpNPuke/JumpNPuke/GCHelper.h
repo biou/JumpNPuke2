@@ -11,7 +11,7 @@
 #import <GameKit/GameKit.h>
 #import "cocos2d.h"
 
-#define EnableGC NO
+#define EnableGC YES
 // on désactive gamecenter  pour testflight (pour éviter de tomber sur la sandbox)
 
 @interface GCHelper : NSObject <GKLeaderboardViewControllerDelegate> {
